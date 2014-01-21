@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+	
+<body>
+	<button class="btn btn-primary btn-lg" id="location_button">locate</button>
+	<thead>
+		<tr>
+			<% if @locations %>
+			<th> Latitude </th>
+			<th> Longitude </th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% if @locations %>
+		<%- @locations.each do |location| %>
+			<tr>
+			<td> <%= location.latitude %> </td>
+			<td> <%= location.longitude %> </td>
+			</tr>
+		<%- end %>
+		<% end %>
+	</tbody>
+
+</body>
+	
+</html>
